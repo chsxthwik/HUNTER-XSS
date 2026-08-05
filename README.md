@@ -1,4 +1,4 @@
-**Quantum-XSS Tool**
+**QUANTUM-XSS Tool**
 
 **Overview**
 This tool is runnning based on BASH scripting and this tool is used to automate your XSS finding task like it can able to find RXSS & BXSS mostly.
