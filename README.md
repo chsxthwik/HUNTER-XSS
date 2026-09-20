@@ -1,74 +1,46 @@
-**QUANTUM-XSS Tool**
+# XSS
 
-**Overview**
-This tool is runnning based on BASH scripting and this tool is used to automate your XSS finding task like it can able to find RXSS & BXSS mostly.
+Payload wordlist, checklist, and **Quantum-XSS** — a Bash workflow for reflected and blind XSS hunting.
 
-**Features**
-Fetch URLs from Wayback Machine and gau.
-Filter and identify potential XSS vulnerable URLs using GF Patterns.
-Support for Blind XSS payload injection.
-Automate XSS scanning using Dalfox.
-Save and organize results in structured directories.
+## Quantum-XSS
 
-Prerequisites
-To run Quantum-XSS, you need to have the following tools installed on your system:
+Automates URL collection (Wayback, gau), gf filtering, and Dalfox scanning. Optional blind XSS callback URL.
 
-Waybackurls-https://github.com/tomnomnom/waybackurls
+### Requirements
 
-gau-https://github.com/lc/gau
+- [waybackurls](https://github.com/tomnomnom/waybackurls)
+- [gau](https://github.com/lc/gau)
+- [gf](https://github.com/tomnomnom/gf)
+- [dalfox](https://github.com/hahwul/dalfox)
 
-gf-https://github.com/tomnomnom/gf
+### Install
 
-Dalfox-https://github.com/hahwul/dalfox
-
-
-
-**Installation**
-Clone this repository:
-
-git clone https://github.com/Quantum-Hacker/XSS
-
-cd Quantum-XSS
-
+```bash
+git clone https://github.com/chsxthwik/XSS.git
+cd XSS/Quantum-XSS
 chmod +x XSS.sh
+```
 
-**Usage**
-The tool provides flexibility in its usage by allowing the user to run various configurations based on the domain, output preferences, and Blind XSS payloads.
+### Usage
 
+```bash
+./XSS.sh -d target.example
+./XSS.sh -d target.example -b https://your-callback.xss.ht
+./XSS.sh -d target.example -o results.txt
+```
 
-./XSS.sh -d <target.com>
+| Flag | Description |
+|------|-------------|
+| `-d` | Target domain (required) |
+| `-b` | Blind XSS callback URL |
+| `-o` | Output file |
+| `-h` | Help |
+| `-v` | Version |
 
-./XSS.sh -d <target.com> -b <blindxss.xss.ht>
+## Files
 
-./XSS.sh -d <target.com> -o <outputfile.txt>
-
-./XSS.sh -d <target.com> -b <blindxss.xss.ht> -o <outputfile.txt>
-
-
-
-**Command-line Arguments**
-
-Argument        Description
-
--d, --domain    The target domain to perform XSS scanning on. (required)
-
--b, --blind     The Blind XSS payload URL to be injected for testing. (optional)
-
--o, --output    The file to store results. Defaults to results.txt if not specified.
-
--h, --help      Display the help message.
-
--v, --version   Display the current version of the tool.
-
-
-
-
-**Example**
-
-./XSS.sh -d example.com -b blindxss.example.ht -o xss_results.txt
-
-In this example:
-
-The script scans example.com for potential XSS vulnerabilities.
-It injects the provided Blind XSS payload (blindxss.example.ht) during the scanning process.
-The results are saved in xss_results.txt.
+| File | Description |
+|------|-------------|
+| `xss.txt` | Payload list |
+| `XSS-Checklist.html` | Testing checklist |
+| `Quantum-XSS/` | Automation script |
